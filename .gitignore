@@ -1,0 +1,4 @@
+[dD][cC][pP]*.ipynb
+[dD][cC][pP]*.pdf
+__pycache__/
+*.pyc
