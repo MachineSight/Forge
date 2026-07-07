@@ -10,7 +10,7 @@ from inference import infer_from_dataframe, interpret_score
 
 
 st.set_page_config(
-    page_title="Crusher Health Monitor",
+    page_title="Equipment Health Monitor",
     page_icon="⚙️",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -329,7 +329,7 @@ st.markdown(
 st.markdown(
     """
     <div class="hero">
-        <h1>Crusher Asset Health Command</h1>
+        <h1>Equipment Health Dashboard</h1>
         <p>Operational monitoring for crusher equipment health, root-cause ranking, and intervention prioritization.</p>
     </div>
     """,

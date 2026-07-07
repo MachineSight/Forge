@@ -142,11 +142,11 @@ def interpret_score(score: float) -> str:
 
 def sensor_anomaly_hint(sensor: str) -> str:
     hints = {
-        "bearing_temperature": "Bearing is overheating",
-        "motor_current": "Motor is overloaded",
+        "Bearing Temperature": "Bearing is overheating",
+        "Motor current": "Motor is overloaded",
         "vibration": "Mechanical imbalance is likely",
-        "rpm": "Rotational speed is unstable",
-        "lubrication_pressure": "Lubrication is insufficient",
+        "RPM": "Rotational speed is unstable",
+        "Lubrication pressure": "Lubrication is insufficient",
     }
     return hints.get(sensor, f"{sensor.replace('_', ' ')} is showing abnormal behaviour")
 
