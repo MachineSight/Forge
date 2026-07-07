@@ -10,7 +10,7 @@ from inference import infer_from_dataframe, interpret_score
 
 
 st.set_page_config(
-    page_title="Equipment Health Monitor",
+    page_title="Equipment Health Monitor - by Team Forge",
     page_icon="⚙️",
     layout="wide",
     initial_sidebar_state="collapsed",
