@@ -10,14 +10,14 @@ This project ingests multi-channel sensor telemetry (bearing temperature, motor 
 
 ```
 ┌─────────────────┐     ┌──────────────────┐     ┌──────────────────────┐
-│  Sensor CSV     │────▶│  Data Preprocess │────▶│  LSTM Autoencoder    │
+│  Sensor CSV     │───▶│  Data Preprocess │───▶│  LSTM Autoencoder    │
 │  (telemetry)    │     │  (normalize,     │     │  (PyTorch)           │
 │                 │     │   window, align) │     │                      │
 └─────────────────┘     └──────────────────┘     └──────────┬───────────┘
-                                                             │
-                                                             ▼
+                                                            |
+                                                            ▼
 ┌─────────────────┐     ┌──────────────────┐     ┌──────────────────────┐
-│  Streamlit UI   │◀────│  Health Scoring  │◀────│  Reconstruction      │
+│  Streamlit UI   │◀───│  Health Scoring  │◀───│  Reconstruction      │
 │  Dashboard      │     │  + Gradient      │     │  Error + Sensitivity │
 │                 │     │  Attribution     │     │  Analysis            │
 └─────────────────┘     └──────────────────┘     └──────────────────────┘
