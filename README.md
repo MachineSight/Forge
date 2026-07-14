@@ -143,6 +143,44 @@ streamlit run app.py
 
 The dashboard opens at `http://localhost:8501`.
 
+### Preventing Streamlit Sleep (Keep-Alive Automation)
+
+This repo includes a keep-alive script at `scripts/keep_streamlit_awake.py` and a scheduled GitHub Actions workflow at `.github/workflows/keep_streamlit_awake.yml`.
+
+#### Option A: GitHub Actions (recommended)
+
+The workflow runs every 10 minutes and sends a ping to:
+
+```text
+https://forge-team.streamlit.app/
+```
+
+To enable it:
+
+1. Push this repo to GitHub.
+2. In GitHub, open **Actions** and ensure workflows are enabled.
+3. Manually run **Keep Streamlit Awake** once from **Actions** -> **Run workflow**.
+
+#### Option B: Local/background runner
+
+Run continuously from any machine that stays online:
+
+```bash
+python scripts/keep_streamlit_awake.py --url "https://forge-team.streamlit.app/"
+```
+
+Useful flags:
+
+```bash
+# One ping and exit
+python scripts/keep_streamlit_awake.py --once
+
+# Custom interval (seconds)
+python scripts/keep_streamlit_awake.py --interval-seconds 480
+```
+
+Note: this is best-effort. If Streamlit Cloud platform policies change or scheduled jobs are delayed, occasional cold starts can still happen.
+
 ### Using the App
 
 1. **Load demo data:** Click *"Ingest Matrix: Healthy Window"* or *"Ingest Matrix: Faulty Window"* to load sample telemetry.
