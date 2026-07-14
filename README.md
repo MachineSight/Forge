@@ -166,17 +166,17 @@ To enable it:
 Run continuously from any machine that stays online:
 
 ```bash
-python scripts/keep_streamlit_awake.py --url "https://forge-team.streamlit.app/"
+python3 scripts/keep_streamlit_awake.py --url "https://forge-team.streamlit.app/"
 ```
 
 Useful flags:
 
 ```bash
 # One ping and exit
-python scripts/keep_streamlit_awake.py --once
+python3 scripts/keep_streamlit_awake.py --once
 
 # Custom interval (seconds)
-python scripts/keep_streamlit_awake.py --interval-seconds 480
+python3 scripts/keep_streamlit_awake.py --interval-seconds 480
 ```
 
 Note: this is best-effort. If Streamlit Cloud platform policies change or scheduled jobs are delayed, occasional cold starts can still happen.

@@ -23,12 +23,13 @@ def ping(url: str, timeout: float, user_agent: str) -> int:
     try:
         with request.urlopen(head_req, timeout=timeout) as response:
             return response.getcode()
-    except error.HTTPError as exc:
-        return exc.code
     except Exception:
         get_req = request.Request(url, method="GET", headers=headers)
-        with request.urlopen(get_req, timeout=timeout) as response:
-            return response.getcode()
+        try:
+            with request.urlopen(get_req, timeout=timeout) as response:
+                return response.getcode()
+        except error.HTTPError as exc:
+            return exc.code
 
 
 def main() -> int:

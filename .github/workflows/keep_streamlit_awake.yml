@@ -20,7 +20,7 @@ jobs:
 
       - name: Ping Streamlit app
         run: |
-          python scripts/keep_streamlit_awake.py \
+          python3 scripts/keep_streamlit_awake.py \
             --url "https://forge-team.streamlit.app/" \
             --once \
             --timeout-seconds 25
